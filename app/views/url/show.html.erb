@@ -1,15 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <div class="card text-white bg-primary">
-        <div class="card-header"><h1>Apelido</h1></div>
-        <div class="card-body text-center">
-          <h1 class="card-title">URL: <a href="https://foasdfasdfsdaf.com">https://foasdfasdfsdaf.com</a></h1>
-          <h1 class="card-title">Shorter: <a href="https://foasdfasdfsdaf.com">https://foasdfasdfsdaf.com</a></h1>
-
-          <p class="card-text"><h1>Clicks: 32</h1></p>
+      <% if @url.present? %>
+        <div class="card text-white bg-primary">
+          <div class="card-header"><h1><%= @url.name %></h1></div>
+          <div class="card-body text-center">
+            <h1 class="card-title">URL:  <a href="<%= @url.url %>"> <%= @url.url %> </a></h1>
+            <p class="card-text"><h1 class="h1">Clicks: <%= @url.clicks %></h1></p>
+          </div>
         </div>
-      </div>
+      <% else %>
+        <%= render 'layouts/flash' %>
+      <% end %>
     </div>
   </div>
 </div>

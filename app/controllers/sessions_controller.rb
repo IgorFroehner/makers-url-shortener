@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
-  def new; end
+  def new
+    redirect_to root_path if helpers.logged_in?
+  end
 
   def create
     @user = User.find_by(email: params[:email])
@@ -8,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       message = "Alguma coisa deu errado! Verifique se seu email e senha estão corretos"
-      redirect_to login_path, alert: message
+      redirect_to login_path, alert: message, status: :unauthorized
     end
   end
 

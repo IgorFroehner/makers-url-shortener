@@ -2,89 +2,17 @@
   <div class="text-center text-white mt-5 mb-5">
     <h1 class="h1">Minhas URL's</h1>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="card border-primary mb-3">
-        <div class="card-body">
-          <h4 class="card-title">Apelido - <a href="https://www.urlexeplo.com">https://www.urlexeplo.com</a></h4>
-          <p class="card-text">Clicks: 15</p>
+  <% current_user.url.each do |url| %>
+    <div class="row">
+      <div class="col-12">
+        <div class="card border-primary mb-3 mx-auto", style="max-width: 800px;">
+          <div class="card-body">
+            <h4 class="card-title"><%= link_to url.name, "url/#{url.name}" %> - <a href="<%= url.url %>"> <%= url.url %> </a> </h4>
+            <p class="card-text">Clicks: <%= url.clicks %></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="card border-primary mb-3">
-        <div class="card-body">
-          <h4 class="card-title">Apelido - <a href="https://www.urlexeplo.com">https://www.urlexeplo.com</a></h4>
-          <p class="card-text">Clicks: 15</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="card border-primary mb-3">
-        <div class="card-body">
-          <h4 class="card-title">Apelido - <a href="https://www.urlexeplo.com">https://www.urlexeplo.com</a></h4>
-          <p class="card-text">Clicks: 15</p>
-        </div>
-      </div>
-    </div>
-  </div><div class="row">
-    <div class="col-12">
-      <div class="card border-primary mb-3">
-        <div class="card-body">
-          <h4 class="card-title">Apelido - <a href="https://www.urlexeplo.com">https://www.urlexeplo.com</a></h4>
-          <p class="card-text">Clicks: 15</p>
-        </div>
-      </div>
-    </div>
-  </div><div class="row">
-    <div class="col-12">
-      <div class="card border-primary mb-3">
-        <div class="card-body">
-          <h4 class="card-title">Apelido - <a href="https://www.urlexeplo.com">https://www.urlexeplo.com</a></h4>
-          <p class="card-text">Clicks: 15</p>
-        </div>
-      </div>
-    </div>
-  </div><div class="row">
-    <div class="col-12">
-      <div class="card border-primary mb-3">
-        <div class="card-body">
-          <h4 class="card-title">Apelido - <a href="https://www.urlexeplo.com">https://www.urlexeplo.com</a></h4>
-          <p class="card-text">Clicks: 15</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="card border-primary mb-3">
-        <div class="card-body">
-          <h4 class="card-title">Apelido - <a href="https://www.urlexeplo.com">https://www.urlexeplo.com</a></h4>
-          <p class="card-text">Clicks: 15</p>
-        </div>
-      </div>
-    </div>
-  </div><div class="row">
-    <div class="col-12">
-      <div class="card border-primary mb-3">
-        <div class="card-body">
-          <h4 class="card-title">Apelido - <a href="https://www.urlexeplo.com">https://www.urlexeplo.com</a></h4>
-          <p class="card-text">Clicks: 15</p>
-        </div>
-      </div>
-    </div>
-  </div><div class="row">
-    <div class="col-12">
-      <div class="card border-primary mb-3">
-        <div class="card-body">
-          <h4 class="card-title">Apelido - <a href="https://www.urlexeplo.com">https://www.urlexeplo.com</a></h4>
-          <p class="card-text">Clicks: 15</p>
-        </div>
-      </div>
-    </div>
-  </div>   
+  <% end %>
+     
 </div>

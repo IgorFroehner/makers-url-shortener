@@ -5,20 +5,23 @@
   <div class="row">
     <div class="col-12">
         <div class="card-body text-center">
-            <form style="max-width: 700px;" class="mx-auto">
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control form-control-lg" id="formGroupExampleInput" placeholder="Example input">
-              <label for="formGroupExampleInput">URL</label>
-            </div>
-            <div class="form-floating">
-              <input type="text" class="form-control form-control-lg" id="formGroupExampleInput" placeholder="Example input">
-              <label for="formGroupExampleInput">Apelido</label>
-            </div>
-            <div class="text-end">
+          <div class="mx-auto" style="max-width: 700px;">
+            <%= form_for @url, method: :post do |f|  %>
 
-              <button class="btn btn-lg btn-success mt-3" type="submit">Criar</button>
-            </div>
-          </form>
+              <div class="form-floating mb-3">
+                <%= f.text_field :url, :class => "form-control form-control-lg", :id => "url", :placeholder => "example@mail.com" %>
+                <%= f.label :url, :for => "url"  %>
+              </div>
+              <div class="form-floating">
+                <%= f.text_field :name, :class => "form-control form-control-lg", :id => "name", :placeholder => "Nickname" %>
+                <%= f.label "Apelido", :for => "name"  %>
+              </div>
+              <div class="text-end">
+                <%= f.submit "Criar", :class => "btn btn-lg btn-primary mt-3" %>
+              </div>
+            <% end %>
+            <%= render 'layouts/flash' %>
+          </div>
         </div>
       </div>
     </div>   

@@ -1,0 +1,13 @@
+<% flash.each do |type, msg| %>
+	<% if type == "alert" %>
+		<div class="alert alert-dismissible alert-danger mt-2">
+		<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+		<strong>Ops!</strong> <%= msg %>
+		</div>
+	<% else %>
+		<div class="alert alert-dismissible alert-success mt-2">
+		<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+		<strong>Ops!</strong> <%= msg %>
+		</div>
+	<% end %>
+<% end %>
