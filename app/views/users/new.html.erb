@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12">
+      <main style="max-width: 500px;" class="mx-auto">
+        <h1 class="h3 mb-3 fw-normal">Criar Novo Usuário</h1>
+        <%= form_for @user do |f| %>
+
+          <div class="form-floating mb-1">
+            <%= f.text_field :email, :class => "form-control", :id => "email" %>
+            <%= f.label :email, :for => "email"  %>
+          </div>
+
+          <div class="form-floating mb-3">
+            <%= f.password_field :password, :class => "form-control", :id => "password" %>
+            <%= f.label "Senha", :for => "password" %>
+          </div>
+
+          <div class="text-end">
+            <%= f.submit "Criar Usuário", :class => "btn btn-primary" %>
+          </div>
+        <% end %>        
+      </main>
+    </div>
+  </div>
+</div>
