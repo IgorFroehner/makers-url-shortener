@@ -1,17 +1,29 @@
-# README
+# URL Shortener for Makers Network
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A url shortener made of Makers Network, writen in rails with postgres database.
 
-Things you may want to cover:
+### Versions:
+* ruby: 2.7.4
+* rails: 7.0.1
+  
+## Installing and Running
 
-* Ruby version
+1. Install all gems
+    ```shell
+    bundle install
+    ```
 
-* System dependencies
+2. Configure the DB credentials in .env file, use this [example](docs/example.env).
 
-* Configuration
+3. Create the database
+    ```
+    rails db:create
+    ```
 
-* Database creation
+4. Run the application
+   ```
+    rails server
+    ```
 
 * Database initialization
 
