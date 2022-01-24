@@ -12,6 +12,6 @@ class Url < ApplicationRecord
             uniqueness: true,
             length: { maximum: 20, minimum: 3 },
             exclusion: { in: %w([url new users]) },
-            format: { with: /\A\S+\Z/,
+            format: { with: /\A[a-zA-Z0-9]*\z/,
                       message: "Apelido Inválido" }
 end
