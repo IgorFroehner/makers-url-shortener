@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_21_171757) do
+ActiveRecord::Schema.define(version: 2022_01_24_125523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "urls", force: :cascade do |t|
-    t.string "url"
+    t.string "url", limit: 300
     t.integer "clicks", default: 0
-    t.string "name"
+    t.string "name", limit: 20
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_01_21_171757) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email"
+    t.string "email", limit: 150
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
