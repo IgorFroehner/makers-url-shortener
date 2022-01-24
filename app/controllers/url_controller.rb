@@ -25,10 +25,20 @@ class UrlController < ApplicationController
   def redirect
     @url = helpers.current_user.url.find_by(name: params[:name])
 
-    @url.clicks += 1
-    @url.save
+    redirection_side_effects
 
     redirect_to @url.url, allow_other_host: true
+  end
+
+  def destroy
+    @url = helpers.current_user.url.find_by(name: params[:name])
+
+    if @url.present?
+      @url.destroy
+      redirect_to urls_path, status: :see_other
+    else
+      redirect_to urls_path, status: :not_found, alert: "URL não encontrada"
+    end
   end
 
   private
@@ -43,5 +53,11 @@ class UrlController < ApplicationController
       message += ": #{msg}"
     end
     message
+  end
+
+  def redirection_side_effects
+    @url.clicks += 1
+
+    @url.save
   end
 end

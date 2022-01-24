@@ -6,17 +6,16 @@ Rails.application.routes.draw do
   post '/logout', to: 'sessions#destroy'
   get '/logout', to: 'sessions#destroy'
 
-  
   get '/url', to: 'url#index', as: 'url'    # lists all user's urls
   get '/new', to: 'url#new'                 # form to create new urls
   get '/url/:name', to: 'url#show'          # show datailed url with :name
   post '/url', to: 'url#create', as: 'urls' # path to send the post of the new url
-  delete '/url/:id', to: 'url#destroy'      # delete url with this :id
-  
+  delete '/url/:name', to: 'url#destroy'    # delete url with this :id
+
   resources :users, only: [:new, :create, :update, :destroy]
-  
+
   get '/:name', to: 'url#redirect'
-  
+
   # Defines the root path route ("/")
   root 'home#index'
 end
