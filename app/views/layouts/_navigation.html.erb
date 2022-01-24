@@ -1,12 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-auto">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">MAKERS URL Shortner</a>
+    <a class="navbar-brand text-secondary" href="">
+      <%= image_tag("makers_shortner_logo.png", :alt => "Makers Network's Logo", :width => 64, :height => 64) %>
+      URL shortner
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div class="">
     <% if logged_in? %>
-      <div class="collapse navbar-collapse text-center align" id="navbarColor01">
+      <div class="collapse navbar-collapse text-center align-items-center" id="navbarColor01">
         <ul class="navbar-nav me-auto">
             <li class="nav-item <%= "active" if current_page?(:controller => 'url', :action => 'new') %>">
               <%= link_to "Nova Url", "/new", :class => "nav-link" %>
@@ -17,11 +21,13 @@
         </ul>
       </div>
     <% end %>
+    </div>
 
     <div class="align-items-end me-5 text-end">
       <% if logged_in? %>
-        <div class="row col-2">
-          <h5 class="h5"><%= current_user.email %></h5>
+        <div class="row">
+          <h5 class="h5"><%= current_user.email %></h5> 
+          <br>
           <%= button_to "Log Out", logout_path, method: :get, :class => "btn btn-primary btn-sm" %>
         </div>
       <% else %>
