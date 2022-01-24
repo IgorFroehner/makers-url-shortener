@@ -3,7 +3,7 @@
 A url shortener made of Makers Network, writen in rails with postgres database.
 
 ### Versions:
-* ruby: 2.7.4
+* ruby: 3.1.0
 * rails: 7.0.1
   
 ## Installing and Running
