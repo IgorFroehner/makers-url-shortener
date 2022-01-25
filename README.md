@@ -34,3 +34,8 @@ A url shortener made of Makers Network, writen in rails with postgres database.
 * Deployment instructions
 
 * ...
+
+### TODO
+
+- [ ] Migrate authentication to Devise
+- [ ] Create tests for controllers
