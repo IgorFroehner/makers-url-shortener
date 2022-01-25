@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :update, :destroy]
 
-  get '/:name', to: 'url#redirect'
+  get '/:name', to: 'home#redirect'
 
   # Defines the root path route ("/")
   root 'home#index'

@@ -22,17 +22,6 @@ class UrlController < ApplicationController
     redirect_to root_path, alert: "Não existe URL com o apelido #{params[:name]}" if @url.blank?
   end
 
-  def redirect
-    @url = helpers.current_user.url.find_by(name: params[:name])
-
-    if @url.present?
-      redirection_side_effects
-      redirect_to @url.url, allow_other_host: true
-    else
-      redirect_to root_path
-    end
-  end
-
   def destroy
     @url = helpers.current_user.url.find_by(name: params[:name])
 
@@ -56,11 +45,5 @@ class UrlController < ApplicationController
       message += ": #{msg}"
     end
     message
-  end
-
-  def redirection_side_effects
-    @url.clicks += 1
-
-    @url.save
   end
 end
