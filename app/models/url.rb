@@ -2,7 +2,7 @@ class Url < ApplicationRecord
   belongs_to :user
   validates :url,
             presence: true,
-            length: { maximum: 300, minimum: 5 },
+            length: { maximum: 300, minimum: 4 },
             format: {
               with: URI::DEFAULT_PARSER.make_regexp,
               message: "URL Inválida",
