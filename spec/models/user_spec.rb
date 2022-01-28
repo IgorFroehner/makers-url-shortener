@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     let(:user) { described_class.new(password_digest: "1234") }
 
     context 'with valid emails' do
-      valid_email_list = ['igor@maker.com', 'valid.valid@valid.com', 'again_valid@valid.com.br']
+      valid_email_list = %w[igor@maker.com valid.valid@valid.com again_valid@valid.com.br]
 
       valid_email_list.each do |email|
         it 'considers the entity valid' do
@@ -16,7 +16,7 @@ RSpec.describe User, type: :model do
     end
 
     context 'with invalid emails' do
-      invalid_email_list = ['@maker.com', 'asdf@.com', 'now_invalid@valid', 'valid@', '@', '@invalid', '.com']
+      invalid_email_list = %w[@maker.com asdf@.com now_invalid@valid valid@ @ @invalid .com]
 
       invalid_email_list.each do |email|
         it 'considers the entity invalid' do

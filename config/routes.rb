@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/url', to: 'url#index', as: 'url'    # lists all user's urls
   get '/new', to: 'url#new'                 # form to create new urls
-  get '/url/:name', to: 'url#show'          # show datailed url with :name
+  get '/url/:name', to: 'url#show'          # show detailed url with :name
   post '/url', to: 'url#create', as: 'urls' # path to send the post of the new url
   delete '/url/:name', to: 'url#destroy'    # delete url with this :id
 

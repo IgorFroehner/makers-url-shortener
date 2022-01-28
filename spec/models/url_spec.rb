@@ -7,7 +7,7 @@ RSpec.describe Url, type: :model do
 
   describe ":url" do
     context 'when the url is invalid' do
-      invalid_url_list = ["www.invalid.com", "invalid.com"]
+      invalid_url_list = ["www.invalid.com", "invalid.com", ""]
       # TODO: add more test cases for this
 
       invalid_url_list.each do |url|
@@ -20,7 +20,7 @@ RSpec.describe Url, type: :model do
     end
 
     context 'when the url is valid' do
-      valid_url_list = ["https://www.valid.com", "https://valid.com"]
+      valid_url_list = %w[https://www.valid.com https://valid.com]
       # TODO: add more test cases for this
 
       valid_url_list.each do |url|
