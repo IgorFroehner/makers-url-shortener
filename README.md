@@ -1,11 +1,11 @@
-# URL Shortener for Makers Network
+# URL Shortener
 
-A url shortener made for [Makers Network](https://makersnetwork.cc/), writen in rails with postgres database.
+A url shortener rails application, written on ruby-on-rails with postgres databse.
 
 ### Versions:
-* ruby: 3.1.0
-* rails: 7.0.1
-  
+* ruby: 3.1.2
+* rails: 7.0.4.1
+
 ## Installing and Running
 
 1. Install all gems
@@ -13,18 +13,25 @@ A url shortener made for [Makers Network](https://makersnetwork.cc/), writen in 
     bundle install
     ```
 
-2. Configure the DB credentials in .env file, use this [example](docs/example.env).
+2. Start the database with docker-compose, or configure one to trust connections on port 5432
+    ```shell
+    docker-compose up -d
+    ```
 
 3. Create the database
-    ```
+    ```shell
     rails db:create
     ```
 
-4. Run the application
-   ```
-    rails server
+4. Use the seed to create your first user
+    ```shell
+    rails db:seed
     ```
 
+5. Run the application
+   ```shell
+    rails server
+    ```
 
 ### Usage
 
