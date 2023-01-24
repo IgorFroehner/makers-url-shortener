@@ -5,8 +5,7 @@
 
         <%= form_with model: @user, url: login_path do |f| %>
 
-          <%= image_tag("makers.png", :alt => "Makers Network's Logo", :width => 72, :height => 72, :class => "mb-3") %>
-          <h1 class="h3 mb-3 fw-normal">Faça Log In</h1>
+          <h1 class="h3 mb-3 fw-normal">Sign In to Start Using!</h1>
 
           <div class="form-floating mb-1">
             <%= f.email_field :email, autofocus: true, placeholder: "name@example.com", :class => "form-control" %>
@@ -14,10 +13,10 @@
           </div>
           <div class="form-floating">
             <%= f.password_field :password, :class => "form-control", autocomplete: "off", placeholder: "Senha" %>
-            <%= f.label "Senha", :for => "password" %>
+            <%= f.label "Password", :for => "password" %>
           </div>
           <div class="text-end mt-3">
-            <%= submit_tag "Log In", :class => "btn btn-lg btn-primary" %>
+            <%= submit_tag "Sign In", :class => "btn btn-lg btn-primary" %>
           </div>
         <% end %>
         </form>
